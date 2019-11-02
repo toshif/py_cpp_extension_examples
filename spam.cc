@@ -3,9 +3,19 @@
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 
+#include <iostream>
+
+using namespace std;
+
+int a = 0;
+
 static PyObject *
 spam_system(PyObject *self, PyObject *args)
 {
+  cout << "calling spam_system in c++ ..." << endl;
+  a++;
+  cout << "a=" << a << endl;
+
   const char *command;
   int sts;
 
